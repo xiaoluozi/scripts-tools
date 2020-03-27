@@ -1,0 +1,12 @@
+{
+  "name": "scripts-tools",
+  "version": "1.0.0",
+  "description": "脚本工具集合",
+  "main": "index.js",
+  "repository": "git@github.com:xiaoluozi/scripts-tools.git",
+  "author": "luoweiling <luoweiling@huohua.cn>",
+  "license": "MIT",
+  "scripts": {
+    "renameSub": "node ./scripts/renameSub/index"
+  }
+}
