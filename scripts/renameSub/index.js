@@ -6,27 +6,31 @@ const [rule = /s\d+e\d+/i] = process.argv.slice(2);
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 function renameSub(dir, files, videoFile) {
   const extname = path.extname(videoFile);
   const fileName = path.basename(videoFile, extname);
   const matchContext = fileName.match(rule)[0];
+  const matchUpperContext = matchContext.toUpperCase();
 
   for (const file of files) {
-    if (/\.(ass|srt)$/.test(file) && file.indexOf(matchContext) !== -1) {
+    const isMatched =
+      file.indexOf(matchContext) !== -1 ||
+      file.indexOf(matchUpperContext) !== -1;
+    if (/\.(ass|srt)$/.test(file) && isMatched) {
       const end = path.extname(file);
       const oldPath = path.resolve(dir, file);
       const newPath = path.resolve(dir, `${fileName}${end}`);
-      fs.rename(oldPath, newPath, err => {
+      fs.rename(oldPath, newPath, (err) => {
         if (err) throw err;
       });
     }
   }
 }
 
-rl.question("请输入文件夹路径(默认当前路径): ", dir => {
+rl.question("请输入文件夹路径(默认当前路径): ", (dir) => {
   dir = dir || process.cwd();
   const files = fs.readdirSync(dir);
   const allRename = [];
@@ -39,7 +43,7 @@ rl.question("请输入文件夹路径(默认当前路径): ", dir => {
     .then(() => {
       rl.close();
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       rl.close();
     });
