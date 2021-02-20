@@ -419,6 +419,11 @@ uuid@^3.3.2:
   resolved "https://registry.npm.bg.huohua.cn/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
 
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.npm.bg.huohua.cn/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=
+
 verror@1.10.0:
   version "1.10.0"
   resolved "https://registry.npm.bg.huohua.cn/verror/-/verror-1.10.0.tgz#3a105ca17053af55d6e270c1f8288682e18da400"
