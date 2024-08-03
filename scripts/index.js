@@ -160,8 +160,8 @@ const board = [
         return result;
       }
     };
-    console.log(boardMap);
     // getCurrentMap(boardMap);
+    console.log(boardMap);
   };
   
   solveSudoku(board);
